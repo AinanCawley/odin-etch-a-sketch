@@ -8,7 +8,7 @@ for( let i = 0; i < 16; i++ )
 
     for( let j = 0; j < 16; j++ )
     {
-        cell = document.createElement('div');
+        const cell = document.createElement('div');
         cell.setAttribute('id', i+"x"+j);
         cell.setAttribute('class', 'cell');
         row.appendChild(cell);
@@ -26,6 +26,7 @@ for( let i = 0; i < numberOfCells; i++ )
 {
     cells[i].addEventListener('mouseover', function(event)
     {
-        console.log(event);
+
+        event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, 50%)";
     });
 }
