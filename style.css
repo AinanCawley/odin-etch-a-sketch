@@ -1,0 +1,19 @@
+#etchSketch
+{
+    display: flex;
+    height: 80vh;
+    width: 80vh;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    
+    
+}
+
+#center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
