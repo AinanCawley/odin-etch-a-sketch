@@ -114,11 +114,21 @@ sizeButton.addEventListener('click', function(event)
     cells = document.getElementsByClassName('cell'); //adding eventListeners to the new cells in the new grid
     numberOfCells = cells.length;
 
+    cellsTracker = [0];
+
     for( let i = 0; i < numberOfCells; i++ )
     {
+        cellsTracker[i] = 0;
+
         cells[i].addEventListener('mouseover', function(event)
         {
-            event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, 50%)";
+            let luminosity = cellsTracker[i] * 5 + 5;
+            if( luminosity > 50 )
+            {
+                luminosity = 50;
+            }
+            event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
+            cellsTracker[i] = cellsTracker[i] + 1;
         });
     }
 });
@@ -144,12 +154,21 @@ etchSketch.appendChild(cellsCreator);
 
 let cells = document.getElementsByClassName('cell'); //adding eventListeners to the initalised cells
 let numberOfCells = cells.length;
+let cellsTracker = [0]; //keeps track of how many times a cell is touched
 
 for( let i = 0; i < numberOfCells; i++ )
 {
+    cellsTracker[i] = 0;
+
     cells[i].addEventListener('mouseover', function(event)
     {
-        event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, 50%)";
+        let luminosity = cellsTracker[i] * 5 + 5;
+        if( luminosity > 50 )
+        {
+            luminosity = 50;
+        }
+        event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
+        cellsTracker[i] = cellsTracker[i] + 1;
     });
 }
 
@@ -161,6 +180,7 @@ resetButton.addEventListener('click', function(event)
     for( let i = 0; i < numberOfCells; i++ )
     {
         cells[i].style.backgroundColor = "White";
+        cellsTracker[i] = 0;
     }
 });
 resetButton.innerText = "Reset";
