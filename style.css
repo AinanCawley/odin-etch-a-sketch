@@ -31,6 +31,8 @@ button
     border-style: solid;
     justify-content: stretch;
     align-items: stretch;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 #center
@@ -56,5 +58,5 @@ button
 
 #resetButton
 {
-    margin: 10px;
+    margin: 20px;
 }
