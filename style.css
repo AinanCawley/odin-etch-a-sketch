@@ -5,6 +5,14 @@
     
 }
 
+#interactive
+{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
 #etchSketch
 {
     display: flex;
@@ -12,7 +20,7 @@
     height: 80vh;
     width: 80vh;
     border-width: 1px;
-    border-color: black;
+    border-color: lightgray;
     border-style: solid;
     justify-content: stretch;
     align-items: stretch;
@@ -24,6 +32,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .row
