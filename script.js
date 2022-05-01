@@ -152,3 +152,17 @@ for( let i = 0; i < numberOfCells; i++ )
         event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, 50%)";
     });
 }
+
+const resetButtonContainer = document.getElementById('resetButton');
+const resetButton = document.createElement('button');
+
+resetButton.addEventListener('click', function(event)
+{
+    for( let i = 0; i < numberOfCells; i++ )
+    {
+        cells[i].style.backgroundColor = "White";
+    }
+});
+resetButton.innerText = "Reset";
+
+resetButtonContainer.appendChild(resetButton);

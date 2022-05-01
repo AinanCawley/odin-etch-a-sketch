@@ -5,6 +5,13 @@
     
 }
 
+button
+{
+    padding: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 #interactive
 {
     display: flex;
@@ -45,4 +52,9 @@
 .cell, .row
 {
     flex-grow: 1;
+}
+
+#resetButton
+{
+    margin: 10px;
 }
