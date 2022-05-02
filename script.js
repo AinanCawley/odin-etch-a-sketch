@@ -122,13 +122,16 @@ sizeButton.addEventListener('click', function(event)
 
         cells[i].addEventListener('mouseover', function(event)
         {
-            let luminosity = cellsTracker[i] * 5 + 5;
-            if( luminosity > 50 )
+            if(event.buttons==1)
             {
-                luminosity = 50;
+                let luminosity = cellsTracker[i] * 5 + 5;
+                if( luminosity > 50 )
+                {
+                    luminosity = 50;
+                }
+                event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
+                cellsTracker[i] = cellsTracker[i] + 1;
             }
-            event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
-            cellsTracker[i] = cellsTracker[i] + 1;
         });
     }
 });
@@ -162,13 +165,16 @@ for( let i = 0; i < numberOfCells; i++ )
 
     cells[i].addEventListener('mouseover', function(event)
     {
-        let luminosity = cellsTracker[i] * 5 + 5;
-        if( luminosity > 50 )
+        if(event.buttons==1)
         {
-            luminosity = 50;
+            let luminosity = cellsTracker[i] * 5 + 5;
+            if( luminosity > 50 )
+            {
+                luminosity = 50;
+            }
+            event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
+            cellsTracker[i] = cellsTracker[i] + 1;
         }
-        event.target.style.backgroundColor = "hsl( " + Math.floor(Math.random() * 360) + ", 100%, " + (100-luminosity) + "% )";
-        cellsTracker[i] = cellsTracker[i] + 1;
     });
 }
 
